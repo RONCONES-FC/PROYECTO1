@@ -45,7 +45,7 @@ public class Examen extends Actividad{
     
 	public void enviarRespuestas(List<String> respuestas) {
 		this.respuestas = respuestas;
-		this.setEstado("Pendiente calificacion");
+		this.setEstado("completo");
 	}
 
 }

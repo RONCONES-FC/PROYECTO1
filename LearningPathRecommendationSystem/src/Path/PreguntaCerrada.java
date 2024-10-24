@@ -49,7 +49,7 @@ public class PreguntaCerrada extends Pregunta {
 	}
 
 
-	public int getPunto() {
+	public int getPuntos() {
 		return punto;
 	}
 

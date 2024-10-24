@@ -1,15 +1,28 @@
 package Usuario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Path.Actividad;
+import Path.LearningPath;
 
 public class Usuario {
 	protected String usuario;
     protected String contrasena;
+    public static List<LearningPath> learningPaths = new ArrayList<>();
     
 	public Usuario(String usuario, String contrasena) {
 		super();
 		this.usuario = usuario;
 		this.contrasena = contrasena;
+	}
+
+	public static List<LearningPath> getLearningPaths() {
+		return learningPaths;
+	}
+
+	public static void setLearningPaths(List<LearningPath> learningPaths) {
+		Usuario.learningPaths = learningPaths;
 	}
 
 	public String getUsuario() {
