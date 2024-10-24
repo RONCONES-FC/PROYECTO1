@@ -6,7 +6,7 @@ import java.util.List;
 import Retroalimentacion.Rating;
 import Retroalimentacion.Resena;
 
-public class Actividad {
+public abstract class Actividad {
 
 	private String descripcion;
     private String objetivo;

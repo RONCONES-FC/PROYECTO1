@@ -6,6 +6,7 @@ import Path.Actividad;
 import Path.LearningPath;
 import Path.Progreso;
 import Path.Tarea;
+import Retroalimentacion.Resena;
 import Retroalimentacion.Retroalimentacion;
 
 public class Estudiante extends Usuario  {
@@ -39,8 +40,12 @@ public class Estudiante extends Usuario  {
         return path.getProgreso();
     }
 	
-	public void darRetroalimentacion(Actividad actividad, Retroalimentacion retro) {
-        //implementar
+	public void generarResena(Actividad actividad, String titulo, String comentario) {
+		//date fecha = hoy
+		// cambiar null por fecha
+        Resena resena = new Resena(comentario, null, null, comentario, comentario);
+        List<Resena> resenas = actividad.getResenas();
+        actividad.setResenas(resenas);
     }
 
 	public void inscribirLearningPath(LearningPath path) {

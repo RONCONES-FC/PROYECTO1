@@ -54,7 +54,7 @@ public class Profesor extends Usuario {
 	
 	public Actividad crearActividad(String descripcion, String objetivo, String nivel, int tiempo, boolean obligatorio, Date fechaLimite, String tipo) {
 		//checkear parametros del constructor de actividad
-        Actividad actividad = new Actividad();
+        Actividad actividad = new Actividad(tipo, tipo, tipo, tiempo, obligatorio, tiempo, tipo, fechaLimite, obligatorio, tiempo, null, null, tipo, actividadesCreadas);
         actividadesCreadas.add(actividad);
         return actividad;
     }
@@ -87,21 +87,37 @@ public class Profesor extends Usuario {
 	    return copia;
 	}
 	
-	public void agregarActividad(Actividad actividad) {
-        // implementar
+	public void agregarActividad(Actividad actividad, LearningPath path) {
+		List<Actividad> actividades = path.getActividades();
+		actividades.add(actividad);
+		path.setActividades(actividades);
+	
     }
 
-    public void reordenarActividad(Actividad actividadPorCambiar) {
-        // implementar
-    }
+   
     
-    public void reordenarPath(LearningPath path, Actividad actividadPorCambiar) {
-        //implementar
-    }
+    public void reordenarPath(LearningPath path, Actividad actividadPorCambiar, int pos) {
+        //probar
+    	List<Actividad> actividades = path.getActividades();
+    	actividades.remove(actividadPorCambiar);
+    	if (pos<0) {
+    		pos=0;
+    	} else if (pos>actividades.size()){
+    		pos=actividades.size()-1;
+    	}
+    	
+    	actividades.add(pos, actividadPorCambiar);
+    	path.setActividades(actividades);
+    	
     
-    public void revisarActividad(Actividad actividad) {
-       //implementar
-    }
+    	
+    	}
+    
+    public void revisarActividad(Actividad actividad, String resultado) {
+        //probar
+     	actividad.setEstado(resultado);
+     	
+     }
     
     public List<Resena> verResenas(Actividad actividad) {
         return actividad.getResenas(); 
