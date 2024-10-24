@@ -26,6 +26,9 @@ public class Tarea {
 
 	public void setMedioEnvio(String medioEnvio) {
 		this.medioEnvio = medioEnvio;
+	
+		if(medioEnvio != null && !medioEnvio.isEmpty());
+			this.envio = true;
 	}
 
 	public String getTipo() {
